@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Yasin Arafat Nafis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">Yasin Arafat Nafis</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="cv.html" class="nav-link active text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">CV</a>
+                        <a href="skills.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Skills</a>
+                        <a href="projects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="certificates.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Certificates</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="cv.html" class="block px-3 py-2 text-base font-medium text-blue-600 bg-blue-50 rounded-md">CV</a>
+                <a href="skills.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Skills</a>
+                <a href="projects.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Projects</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Contact</a>
+                <a href="certificates.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Certificates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Curriculum Vitae</h1>
+                <p class="text-xl text-blue-100">Professional Summary & Achievements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Information -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-gray-50 rounded-lg p-8 mb-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Yasin Arafat Nafis</h2>
+                        <p class="text-lg text-blue-600 font-semibold mb-4">Software Engineer</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                                <span>yasinrafatnafis93@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-600 mr-3"></i>
+                                <span>01992-731719</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                                <span>Bashundhara R/A, Dhaka, Bangladesh</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-linkedin text-blue-600 mr-3"></i>
+                                <a href="https://bd.linkedin.com/in/yasin-arafat-nafis" target="_blank" class="text-blue-600 hover:underline">
+                                    linkedin.com/in/yasin-arafat-nafis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
+                            YAN
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Objective -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-white rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-bullseye text-blue-600 mr-3"></i>
+                    Career Objective
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    I am a motivated Computer Science graduate from AIUB, seeking an entry-level IT Software Developer role. 
+                    Passionate about coding and creating efficient, scalable software solutions while growing technical expertise. 
+                    Throughout my academic journey, I have developed strong problem-solving and analytical thinking skills, 
+                    working with various programming languages including Java, C++, Python, C#, and JavaScript. 
+                    I take pride in writing clean, efficient code that is well-documented and easy for others to understand.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-gray-50 rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-code text-blue-600 mr-3"></i>
+                    Technical Skills
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Programming Languages</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Java</span>
+                            <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">C++</span>
+                            <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">C#</span>
+                            <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Web Development</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">HTML</span>
+                            <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">CSS</span>
+                            <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">React.js</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Database Technologies</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">SQL</span>
+                            <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">PL/SQL</span>
+                            <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Oracle 10g</span>
+                            <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Tools & Frameworks</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="skill-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Git</span>
+                            <span class="skill-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">VS Code</span>
+                            <span class="skill-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Agile Development</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Operating Systems</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Windows</span>
+                            <span class="skill-tag bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Skills -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-white rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-users text-blue-600 mr-3"></i>
+                    Soft Skills
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Strong problem-solving and analytical abilities</h4>
+                                <p class="text-gray-600 text-sm">Ability to identify and resolve complex technical issues efficiently</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Team collaboration and communication</h4>
+                                <p class="text-gray-600 text-sm">Effective teamwork and clear communication skills</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Time management and adaptability</h4>
+                                <p class="text-gray-600 text-sm">Efficient time management with ability to adapt to new challenges</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Quick learner with a growth mindset</h4>
+                                <p class="text-gray-600 text-sm">Eagerness to learn new technologies and continuously improve</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-gray-50 rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                    Education
+                </h2>
+                
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-semibold text-gray-900">Bachelor of Science in Computer Science & Engineering (CSE)</h3>
+                    <p class="text-blue-600 font-medium text-lg">American International University–Bangladesh (AIUB)</p>
+                    <p class="text-gray-600 mb-4">Graduated: 2025</p>
+                    
+                    <h4 class="font-semibold text-gray-900 mb-3">Key Coursework:</h4>
+                    <div class="grid md:grid-cols-2 gap-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-book text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Object-Oriented Programming (Java, C++, C#)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-book text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Data Structures and Algorithms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-book text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Database Management Systems</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-book text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Software Engineering</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-book text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Web Application Development</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-book text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Artificial Intelligence and Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-white rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-project-diagram text-blue-600 mr-3"></i>
+                    Projects
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-green-600 pl-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Bus Ticket Management System</h3>
+                        <p class="text-gray-700 mb-2">Java-based application for automating ticket booking, scheduling, and seat management using MySQL for data storage.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Java</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-600 pl-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">School Management System</h3>
+                        <p class="text-gray-700 mb-2">Desktop Java application for managing student records and attendance using OOP concepts and database integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Java</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-gray-50 rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-briefcase text-blue-600 mr-3"></i>
+                    Experience
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-600 pl-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Tutor (Self-Employed)</h3>
+                        <p class="text-blue-600 font-medium">American International University–Bangladesh | April 2023 – January 2024</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li>Provided one-on-one tutoring in Math, English, Physics and ICT for school students</li>
+                            <li>Created study plans and tracked progress to support individual learning needs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-blue-600 pl-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Chief Election Commissioner, School Cabinet Election</h3>
+                        <p class="text-blue-600 font-medium">January 2019 – December 2019</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li>Supervised and conducted the school cabinet election process fairly and efficiently</li>
+                            <li>Coordinated with teachers and students to ensure transparent voting and result management</li>
+                            <li>Promoted student participation and awareness of democratic practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra Curricular Activities -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-card bg-white rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-users text-blue-600 mr-3"></i>
+                    Extra Curricular Activities
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Organizer, Language Fest, AIUB</h4>
+                            <p class="text-gray-600">Led and coordinated a university-level Language Festival with my team, managing event logistics, participant communication, and on-stage activities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Member, AIUB Computer Club (AICC)</h4>
+                            <p class="text-gray-600">Assisted in organizing tech workshops and student coding events.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="py-12 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Download CV</h2>
+            <p class="text-xl mb-8 text-blue-100">Get a printable version of my curriculum vitae</p>
+            <button onclick="window.print()" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-download mr-2"></i>Download PDF
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="text-2xl font-bold text-blue-400">Yasin Arafat Nafis</span>
+                </div>
+                <p class="text-gray-400 mb-4">Software Developer | Computer Science Graduate</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="mailto:yasinrafatnafis93@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://bd.linkedin.com/in/yasin-arafat-nafis" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="tel:01992-731719" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2025 Yasin Arafat Nafis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

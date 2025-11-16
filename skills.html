@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Yasin Arafat Nafis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .skill-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-progress {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .skill-item {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">Yasin Arafat Nafis</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="cv.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">CV</a>
+                        <a href="skills.html" class="nav-link active text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Skills</a>
+                        <a href="projects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="certificates.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Certificates</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="cv.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">CV</a>
+                <a href="skills.html" class="block px-3 py-2 text-base font-medium text-blue-600 bg-blue-50 rounded-md">Skills</a>
+                <a href="projects.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Projects</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Contact</a>
+                <a href="certificates.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Certificates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">My Skills</h1>
+                <p class="text-xl text-blue-100">Technical Expertise & Professional Abilities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Filter -->
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active px-6 py-2 rounded-full border-2 border-blue-600 text-blue-600 font-semibold" data-filter="all">
+                    All Skills
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-blue-600 text-blue-600 font-semibold" data-filter="programming">
+                    Programming
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-blue-600 text-blue-600 font-semibold" data-filter="web">
+                    Web Development
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-blue-600 text-blue-600 font-semibold" data-filter="database">
+                    Database
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-blue-600 text-blue-600 font-semibold" data-filter="tools">
+                    Tools & Frameworks
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-blue-600 text-blue-600 font-semibold" data-filter="soft">
+                    Soft Skills
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="programming">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-code text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Java</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Object-oriented programming, enterprise applications, desktop development</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="programming">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-python text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Python</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Data analysis, scripting, web development, AI/ML applications</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="programming">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-js-square text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">JavaScript</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-yellow-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Frontend development, dynamic web applications, interactive UI</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="programming">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-code text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">C++</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-purple-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">System programming, performance-critical applications, game development</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="programming">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-code text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">C#</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-green-600 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">.NET development, Windows applications, web services</p>
+                </div>
+                
+                <!-- Web Development -->
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="web">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-html5 text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">HTML & CSS</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-orange-600 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Responsive web design, modern CSS, accessibility standards</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="web">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-react text-2xl text-cyan-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">React.js</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-cyan-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Component-based development, state management, modern JavaScript</p>
+                </div>
+                
+                <!-- Database Technologies -->
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="database">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-database text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">MySQL</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-red-600 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Database design, query optimization, data management</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="database">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-database text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Oracle Database</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">SQL, PL/SQL, database administration, enterprise solutions</p>
+                </div>
+                
+                <!-- Tools & Frameworks -->
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="tools">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-git-alt text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Git & Version Control</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-gray-600 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Version control, collaboration, repository management</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="tools">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-code text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">VS Code</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Advanced editing, debugging, extensions, workflow optimization</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-white rounded-lg p-6 shadow-sm" data-category="tools">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-sync-alt text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Agile Development</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">82%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-green-600 h-2 rounded-full" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Scrum methodology, iterative development, team collaboration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Skills -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Soft Skills</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-item skill-card bg-gray-50 rounded-lg p-6 shadow-sm" data-category="soft">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-brain text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Problem Solving</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-green-600 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Analytical thinking, logical reasoning, creative solutions</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-gray-50 rounded-lg p-6 shadow-sm" data-category="soft">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-users text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Teamwork</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Collaboration, team leadership, conflict resolution</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-gray-50 rounded-lg p-6 shadow-sm" data-category="soft">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-comments text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Communication</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Verbal, written, presentation, active listening</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-gray-50 rounded-lg p-6 shadow-sm" data-category="soft">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-clock text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Time Management</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-orange-600 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Prioritization, deadline management, productivity optimization</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-gray-50 rounded-lg p-6 shadow-sm" data-category="soft">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-sync-alt text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Adaptability</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-red-600 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Flexibility, learning agility, change management</p>
+                </div>
+                
+                <div class="skill-item skill-card bg-gray-50 rounded-lg p-6 shadow-sm" data-category="soft">
+                    <div class="text-center mb-4">
+                        <div class="skill-icon w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-graduation-cap text-2xl text-teal-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Continuous Learning</h3>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-600">Proficiency</span>
+                            <span class="text-sm text-gray-600">92%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-progress bg-teal-600 h-2 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">Self-improvement, skill development, staying current with technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Summary -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg p-8 shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Skills Summary</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-blue-600 mb-2">15+</div>
+                        <div class="text-gray-600">Technical Skills</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-green-600 mb-2">6</div>
+                        <div class="text-gray-600">Soft Skills</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600 mb-2">85%</div>
+                        <div class="text-gray-600">Average Proficiency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="text-2xl font-bold text-blue-400">Yasin Arafat Nafis</span>
+                </div>
+                <p class="text-gray-400 mb-4">Software Developer | Computer Science Graduate</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="mailto:yasinrafatnafis93@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://bd.linkedin.com/in/yasin-arafat-nafis" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="tel:01992-731719" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2025 Yasin Arafat Nafis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
